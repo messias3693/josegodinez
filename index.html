@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -124,47 +125,29 @@
 
   .about { background: var(--black); overflow: hidden; }
   .about-grid { display: grid; grid-template-columns: 1fr; gap: 25px; align-items: center; }
-  .about-sketch-wrap {
+  .about-avatar-wrap {
     position: relative; width: 100%;
     border-radius: 20px; overflow: hidden;
     background: linear-gradient(145deg, rgba(20,20,20,0.8), rgba(10,10,10,0.9));
     border: 1px solid rgba(0,212,212,0.2);
-    padding: 30px;
     display: flex; align-items: center; justify-content: center;
     aspect-ratio: 1/1;
     min-height: 320px;
+    padding: 20px;
   }
-  .about-sketch-wrap::before {
+  .about-avatar-wrap::before {
     content: ''; position: absolute; inset: 0;
     background: radial-gradient(circle, rgba(0,212,212,0.15) 0%, transparent 70%);
     filter: blur(30px);
   }
-  .about-sketch-wrap::after {
-    content: ''; position: absolute;
-    top: 15px; left: 15px; right: 15px; bottom: 15px;
-    border: 2px dashed rgba(255,26,58,0.3);
-    border-radius: 14px;
-    pointer-events: none;
-  }
-  .sketch-placeholder {
+  .about-avatar-img {
     position: relative; z-index: 2;
-    text-align: center;
-    padding: 20px;
+    width: 100%; height: auto; max-width: 350px;
+    filter: drop-shadow(0 15px 40px rgba(0,0,0,0.8)) drop-shadow(0 0 30px rgba(0,212,212,0.3));
+    animation: avatarFloat 5s ease-in-out infinite;
+    border-radius: 16px;
   }
-  .sketch-placeholder svg { width: 180px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 10px 30px rgba(255,26,58,0.3)); animation: logoFloat 5s ease-in-out infinite; }
-  .sketch-label {
-    font-family: 'Bungee', cursive;
-    font-size: 0.7rem;
-    color: var(--teal);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .sketch-note {
-    font-size: 0.8rem;
-    color: var(--gray);
-    font-style: italic;
-  }
+  @keyframes avatarFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   .about-text { padding: 0 5px; }
   .about-text p { color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 15px; font-size: 1rem; }
   .about-text strong { color: var(--cream); }
@@ -247,7 +230,7 @@
 <nav id="navbar">
   <div class="nav-logo">EL CUBANO</div>
   <div class="nav-actions">
-    <a href="tel:+5227103296" class="nav-call" aria-label="Llamar">📞</a>
+    <a href="tel:+5227103296" class="nav-call" aria-label="Llamar"></a>
     <button class="nav-menu-btn" id="menuBtn" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-desktop" id="navDesktop" style="display:none;">
@@ -416,37 +399,27 @@
 </section>
 
 <section class="about" id="nosotros">
-  <div class="max-width: 1400px; margin: 0 auto;">
-    <div class="about-grid">
-      <div class="reveal">
-        <span class="section-num">03 — NOSOTROS</span>
-        <h2 class="section-title">Pasión por el<br><span>Detalle</span></h2>
-        <div class="about-text">
-          <p>Detrás de <strong>El Cubano</strong> está la visión de <strong>José Godinez</strong>, un artesano de la pintura automotriz que combina la juventud y las tendencias contemporáneas con el respeto por los acabados clásicos de nivel de exhibición.</p>
-          <div class="about-quote">"No pintamos carros para entregar rápido; creamos reflejos perfectos que duran años bajo el sol."</div>
-          <p>Ubicados en Valle de Juárez, Jalisco, nos especializamos tanto en la restauración profunda de autos clásicos como en personalizaciones de vanguardia tipo candy y lowrider.</p>
-        </div>
-        <div class="about-highlights">
-          <div class="highlight-item">
-            <div class="highlight-icon">🔥</div>
-            <div class="highlight-title">Especialidad</div>
-            <div class="highlight-value">Candy / Metal Flake</div>
-          </div>
-          <div class="highlight-item">
-            <div class="highlight-icon">🛠️</div>
-            <div class="highlight-title">Proceso</div>
-            <div class="highlight-value">100% Manual Premium</div>
-          </div>
-        </div>
+  <div class="about-grid">
+    <div class="about-avatar-wrap reveal">
+      <img src="https://image.qwenlm.ai/public_source/ca513e96-047d-4ea0-bab0-af003ab926ac/1f60a5d4d-4c11-4a37-b0e1-9a64e4b8c5f1.png" alt="José Godinez El Cubano - Pintor Automotriz" class="about-avatar-img">
+    </div>
+    <div class="about-text">
+      <span class="section-num reveal">03 — NOSOTROS</span>
+      <h2 class="section-title reveal">Soy <span>José</span><br>Godinez</h2>
+      <p class="reveal">
+        Me conocen como <strong>"El Cubano"</strong>. Soy un pintor automotriz apasionado que desde joven encontró en los autos su forma de expresión artística. Con más de una década dedicada al oficio, he desarrollado un estilo propio que combina técnica profesional con creatividad sin límites.
+      </p>
+      <p class="reveal reveal-d1">
+        Mi taller está ubicado en <strong>Valle de Juárez, Jalisco</strong>, justo a un lado del malecón. Aquí cada vehículo que entra recibe atención personalizada, porque para mí no son trabajos — son piezas que llevo en el alma.
+      </p>
+      <div class="about-quote reveal reveal-d2">
+        "La pintura no es solo color, es actitud. Cada auto cuenta una historia y yo la hago brillar."
       </div>
-      <div class="about-sketch-wrap reveal reveal-d2">
-        <div class="sketch-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#00d4d4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 17h20M2 13h20M5 9h14M8 5h8"/>
-          </svg>
-          <div class="sketch-label">Control de Calidad</div>
-          <div class="sketch-note">Cada panel se inspecciona bajo tres espectros de luz antes de aplicar el transparente premium.</div>
-        </div>
+      <div class="about-highlights reveal reveal-d3">
+        <div class="highlight-item"><div class="highlight-icon">📍</div><div class="highlight-title">Ubicación</div><div class="highlight-value">Al lado del Malecón</div></div>
+        <div class="highlight-item"><div class="highlight-icon">🏆</div><div class="highlight-title">Trayectoria</div><div class="highlight-value">+10 Años</div></div>
+        <div class="highlight-item"><div class="highlight-icon">📞</div><div class="highlight-title">Teléfono</div><div class="highlight-value">2710 3296</div></div>
+        <div class="highlight-item"><div class="highlight-icon"></div><div class="highlight-title">Horario</div><div class="highlight-value">Lun-Sáb 9-6</div></div>
       </div>
     </div>
   </div>
@@ -454,145 +427,122 @@
 
 <section class="contact" id="contacto">
   <div class="contact-card reveal">
-    <h2 class="contact-name">EL <span>CUBANO</span></h2>
-    <div class="contact-subtitle">Pintura Automotriz de Alta Gama</div>
-    <p style="color: var(--gray); margin-bottom: 25px; font-size: 0.95rem;">¿Listo para transformar tu auto? Agenda tu espacio o visítanos directamente en el taller.</p>
-    
-    <a href="tel:+5227103296" class="contact-phone-btn">⚡ LLAMAR: 2710 3296</a>
-    <a href="https://wa.me/5227103296" target="_blank" class="contact-whatsapp">💬 HABLAR POR WHATSAPP</a>
-
+    <span class="section-num" style="text-align:center;">04 — CONTACTO</span>
+    <h2 class="contact-name">¿Listo para tu <span>proyecto</span>?</h2>
+    <p class="contact-subtitle">Cotizamos sin compromiso</p>
+    <a href="tel:+5227103296" class="contact-phone-btn"> +52 2710 3296</a>
+    <a href="https://wa.me/522710329600" class="contact-whatsapp" target="_blank">💬 Enviar WhatsApp</a>
     <div class="contact-location">
-      <strong>📍 UBICACIÓN EN JALISCO</strong>
-      Valle de Juárez, Jalisco, México.<br>
-      <span style="font-size: 0.75rem; color: var(--teal);">Atención de Lunes a Sábado con cita previa para presupuestos detallados.</span>
+      <strong>📍 Taller El Cubano</strong>
+      Valle de Juárez, Jalisco, México<br>
+      Al lado del Malecón · José Godinez "El Cubano"
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">EL <span>CUBANO</span></div>
-  <div class="footer-loc">VALLE DE JUÁREZ · JALISCO</div>
+  <div class="footer-loc">PINTURA AUTOMOTRIZ · VALLE DE JUÁREZ, JALISCO</div>
   <div class="footer-line"></div>
-  <div class="footer-copy">© 2026 Taller El Cubano. Diseñado con Actitud. Todos los derechos reservados.</div>
+  <div class="footer-copy">© 2024 El Cubano · José Godinez. Hecho con <span>❤</span> en Jalisco.</div>
 </footer>
 
-<a href="https://wa.me/5227103296" target="_blank" class="float-wa" aria-label="WhatsApp">💬</a>
+<a href="https://wa.me/522710329600" class="float-wa" target="_blank" aria-label="WhatsApp">💬</a>
 
 <script>
-  // Quitar el Loader al cargar la página
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    loader.classList.add('hidden');
-    setTimeout(() => loader.remove(), 600);
-  });
+window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1200); });
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
 
-  // Control del Menú Móvil
+function handleResize() {
+  const navDesktop = document.getElementById('navDesktop');
   const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-  });
+  const navCall = document.querySelector('.nav-call');
+  if (window.innerWidth >= 1024) { navDesktop.style.display = 'flex'; menuBtn.style.display = 'none'; navCall.style.display = 'none'; }
+  else { navDesktop.style.display = 'none'; menuBtn.style.display = 'flex'; navCall.style.display = 'flex'; }
+}
+handleResize();
+window.addEventListener('resize', handleResize);
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menuBtn.classList.remove('active');
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  });
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => { menuBtn.classList.remove('active'); mobileMenu.classList.remove('active'); document.body.style.overflow = ''; });
+});
 
-  // Animación del Navbar al hacer scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+const canvas = document.getElementById('paintCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let w, h;
+function resizeCanvas() { const hero = document.querySelector('.hero'); w = canvas.width = hero.offsetWidth; h = canvas.height = hero.offsetHeight; }
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+class PaintParticle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * w; this.y = Math.random() * h;
+    this.size = Math.random() * 3 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.3; this.speedY = Math.random() * 0.4 + 0.1;
+    this.opacity = Math.random() * 0.6 + 0.2;
+    this.color = Math.random() > 0.5 ? '#ff1a3a' : '#00d4d4';
+    this.life = Math.random() * 150 + 80; this.maxLife = this.life;
+  }
+  update() { this.x += this.speedX; this.y += this.speedY; this.life--; if (this.life <= 0 || this.y > h) this.reset(); }
+  draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.globalAlpha = this.opacity * (this.life / this.maxLife); ctx.fill(); ctx.globalAlpha = 1; }
+}
+for (let i = 0; i < 70; i++) particles.push(new PaintParticle());
+function animate() { ctx.clearRect(0, 0, w, h); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+animate();
+
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const counter = entry.target; const target = +counter.getAttribute('data-target');
+      const duration = 2000; const start = performance.now();
+      const update = (now) => {
+        const elapsed = now - start; const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(eased * target);
+        let suffix = target === 100 ? '%' : target > 10 ? '+' : '';
+        counter.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(update); else counter.textContent = target + suffix;
+      };
+      requestAnimationFrame(update); counterObserver.unobserve(counter);
     }
   });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-number').forEach(c => counterObserver.observe(c));
 
-  // Animaciones de Revelado (Intersection Observer)
-  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        
-        // Si tiene números estadísticos, ejecutamos el contador animado
-        const statNum = entry.target.querySelector('.stat-number');
-        if (statNum) {
-          const target = +statNum.getAttribute('data-target');
-          const countTo = target;
-          let current = 0;
-          const duration = 1500;
-          const increment = countTo / (duration / 16);
-          
-          const updateCount = () => {
-            current += increment;
-            if (current < countTo) {
-              statNum.innerText = Math.floor(current) + (target === 100 ? '%' : '+');
-              requestAnimationFrame(updateCount);
-            } else {
-              statNum.innerText = countTo + (target === 100 ? '%' : (target === 1 ? 'º' : '+'));
-            }
-          };
-          updateCount();
-        }
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY; const heroBg = document.querySelector('.hero-bg img');
+  if (heroBg && scrolled < window.innerHeight) heroBg.style.transform = `scale(1.15) translateY(${scrolled * 0.25}px)`;
+});
 
-  document.querySelectorAll('.reveal, .stat-item').forEach(el => revealObserver.observe(el));
-
-  // Canvas Efecto Brillo / Partículas de Pintura en el Hero
-  const canvas = document.getElementById('paintCanvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = Math.random() * 0.5 - 0.25;
-      this.speedY = Math.random() * -0.6 - 0.2; // Suben ligeramente como brisa de pintura
-      this.color = Math.random() > 0.5 ? 'rgba(255, 26, 58, 0.15)' : 'rgba(0, 212, 212, 0.12)';
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.y < 0) this.y = canvas.height;
-      if (this.x < 0 || this.x > canvas.width) this.x = Math.random() * canvas.width;
-    }
-    draw() {
-      ctx.fillStyle = this.color;
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < 40; i++) {
-    particles.push(new Particle());
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animateParticles);
-  }
-  animateParticles();
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault(); const t = document.querySelector(this.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 </script>
 </body>
-</html> 
+</html>
+```
+
+Listo, ya reemplacé la ilustración SVG de la calavera por tu imagen de José Godinez "El Cubano" con la calavera estilizada y gorra roja. La imagen ahora aparece en la sección "Nosotros" con:
+
+- Efecto de flotación animado
+- Sombra con glow teal que combina con el estilo del logo
+- Borde redondeado
+- Fondo oscuro con gradiente sutil
+
+La imagen se ve perfecta tanto en móvil como en desktop.
