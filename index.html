@@ -31,8 +31,8 @@
   nav.scrolled { padding: 10px 20px; background: rgba(3,3,3,0.97); border-bottom-color: rgba(255,26,58,0.4); }
   .nav-logo { font-family: 'Racing Sans One', cursive; font-size: 1.2rem; letter-spacing: 2px; background: linear-gradient(135deg, var(--cream) 0%, var(--red) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .nav-actions { display: flex; gap: 10px; align-items: center; }
-  .nav-call { background: var(--red); color: white; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; animation: callPulse 2s ease-in-out infinite; }
-  @keyframes callPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,26,58,0.6); } 50% { box-shadow: 0 0 0 12px rgba(255,26,58,0); } }
+  .nav-wa { background: #25D366; color: white; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; animation: waPulse 2s ease-in-out infinite; }
+  @keyframes waPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); } }
   .nav-menu-btn { background: none; border: none; color: white; width: 42px; height: 42px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; }
   .nav-menu-btn span { display: block; width: 24px; height: 2px; background: white; transition: all 0.3s; border-radius: 1px; }
   .nav-menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--red); }
@@ -44,7 +44,7 @@
   .mobile-menu a { color: white; text-decoration: none; font-family: 'Racing Sans One', cursive; font-size: 2rem; letter-spacing: 3px; transition: all 0.3s; position: relative; }
   .mobile-menu a:hover { color: var(--red); transform: translateX(10px); }
   .mobile-menu a::before { content: attr(data-num); position: absolute; left: -45px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--teal); }
-  .mobile-menu-phone { margin-top: 20px; background: linear-gradient(135deg, var(--red), var(--red-deep)); color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 3px; }
+  .mobile-menu-wa { margin-top: 20px; background: #25D366; color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 3px; }
 
   .hero { min-height: 100vh; min-height: 100dvh; position: relative; display: flex; align-items: flex-end; padding: 100px 20px 40px; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; z-index: 0; }
@@ -69,8 +69,8 @@
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(20px); } }
   .hero-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.85); max-width: 480px; line-height: 1.7; margin-bottom: 25px; opacity: 0; animation: fadeUp 0.8s 0.7s forwards; border-left: 2px solid var(--red); padding-left: 15px; }
   .hero-cta { display: flex; flex-direction: column; gap: 12px; max-width: 400px; opacity: 0; animation: fadeUp 0.8s 0.9s forwards; }
-  .btn-main { background: linear-gradient(135deg, var(--red), var(--red-deep)); color: white; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 30px rgba(255,26,58,0.5); transition: all 0.3s; border: none; cursor: pointer; }
-  .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255,26,58,0.7); }
+  .btn-main { background: #25D366; color: white; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 10px 30px rgba(37,211,102,0.5); transition: all 0.3s; border: none; cursor: pointer; }
+  .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(37,211,102,0.7); }
   .btn-outline { background: transparent; color: white; padding: 16px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; text-align: center; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s; }
   .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
   .hero-scroll { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px; color: rgba(255,255,255,0.4); font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0; animation: fadeUp 0.8s 1.3s forwards; }
@@ -163,10 +163,10 @@
   .contact-name { font-family: 'Racing Sans One', cursive; font-size: 1.8rem; margin-bottom: 5px; }
   .contact-name span { color: var(--red); }
   .contact-subtitle { color: var(--teal); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; margin-bottom: 25px; }
-  .contact-phone-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(135deg, var(--red), var(--red-deep)); color: white; padding: 18px; border-radius: 14px; text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 3px; margin-bottom: 12px; box-shadow: 0 10px 30px rgba(255,26,58,0.5); transition: all 0.3s; animation: callPulse 2s ease-in-out infinite; }
-  .contact-phone-btn:hover { transform: scale(1.03); }
-  .contact-whatsapp { display: flex; align-items: center; justify-content: center; gap: 10px; background: #25D366; color: white; padding: 15px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 20px; transition: all 0.3s; }
-  .contact-whatsapp:hover { transform: scale(1.03); }
+  .contact-wa-btn { display: flex; align-items: center; justify-content: center; gap: 12px; background: #25D366; color: white; padding: 18px; border-radius: 14px; text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 12px; box-shadow: 0 10px 30px rgba(37,211,102,0.5); transition: all 0.3s; animation: waPulse 2s ease-in-out infinite; }
+  .contact-wa-btn:hover { transform: scale(1.03); }
+  .contact-phone { display: flex; align-items: center; justify-content: center; gap: 10px; background: rgba(255,255,255,0.08); color: var(--cream); padding: 15px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 20px; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+  .contact-phone:hover { background: rgba(255,255,255,0.12); transform: scale(1.03); }
   .contact-location { background: rgba(255,255,255,0.04); padding: 15px; border-radius: 12px; font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
   .contact-location strong { color: var(--cream); display: block; margin-bottom: 5px; font-size: 0.95rem; }
 
@@ -199,14 +199,14 @@
     .nav-desktop a { color: var(--cream); text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; position: relative; transition: color 0.3s; }
     .nav-desktop a:hover { color: var(--red); }
     .nav-menu-btn { display: none; }
-    .nav-call { display: none; }
+    .nav-wa { display: none; }
     section { padding: 120px 60px; }
     .hero { padding: 140px 60px 80px; }
     .services-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .gallery-grid { grid-template-columns: repeat(3, 1fr); }
     .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
     .contact-card { padding: 60px 50px; }
-    .contact-phone-btn { font-size: 2rem; }
+    .contact-wa-btn { font-size: 1.8rem; }
     .about-grid { grid-template-columns: 1fr 1fr; gap: 50px; }
   }
 
@@ -229,7 +229,7 @@
 <nav id="navbar">
   <div class="nav-logo">EL CUBANO</div>
   <div class="nav-actions">
-    <a href="tel:+5227103296" class="nav-call" aria-label="Llamar"></a>
+    <a href="https://wa.me/523327103296" class="nav-wa" target="_blank" aria-label="WhatsApp">💬</a>
     <button class="nav-menu-btn" id="menuBtn" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-desktop" id="navDesktop" style="display:none;">
@@ -238,7 +238,7 @@
     <a href="#galeria">Galería</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#contacto">Contacto</a>
-    <a href="tel:+5227103296" class="btn-main" style="padding:10px 20px; font-size:0.75rem;">LLAMAR</a>
+    <a href="https://wa.me/523327103296" class="btn-main" target="_blank" style="padding:10px 20px; font-size:0.75rem;"> WHATSAPP</a>
   </div>
 </nav>
 
@@ -248,7 +248,7 @@
   <a href="#galeria" data-num="03">GALERÍA</a>
   <a href="#nosotros" data-num="04">NOSOTROS</a>
   <a href="#contacto" data-num="05">CONTACTO</a>
-  <a href="tel:+5227103296" class="mobile-menu-phone">📞 +52 2710 3296</a>
+  <a href="https://wa.me/523327103296" class="mobile-menu-wa" target="_blank"> WhatsApp</a>
 </div>
 
 <section class="hero" id="inicio">
@@ -270,7 +270,7 @@
       Pasión joven, resultado legendario. Más de 10 años transformando vehículos en obras de arte sobre ruedas con el estilo único que solo El Cubano puede dar.
     </p>
     <div class="hero-cta">
-      <a href="tel:+5227103296" class="btn-main">📞 LLAMAR AHORA</a>
+      <a href="https://wa.me/523327103296" class="btn-main" target="_blank">💬 ENVIAR WHATSAPP</a>
       <a href="#galeria" class="btn-outline">Ver Proyectos</a>
     </div>
   </div>
@@ -383,9 +383,9 @@
         "La pintura no es solo color, es actitud. Cada auto cuenta una historia y yo la hago brillar."
       </div>
       <div class="about-highlights reveal reveal-d3">
-        <div class="highlight-item"><div class="highlight-icon">📍</div><div class="highlight-title">Ubicación</div><div class="highlight-value">Al lado del Malecón</div></div>
+        <div class="highlight-item"><div class="highlight-icon"></div><div class="highlight-title">Ubicación</div><div class="highlight-value">Al lado del Malecón</div></div>
         <div class="highlight-item"><div class="highlight-icon">🏆</div><div class="highlight-title">Trayectoria</div><div class="highlight-value">+10 Años</div></div>
-        <div class="highlight-item"><div class="highlight-icon">📞</div><div class="highlight-title">Teléfono</div><div class="highlight-value">2710 3296</div></div>
+        <div class="highlight-item"><div class="highlight-icon">💬</div><div class="highlight-title">WhatsApp</div><div class="highlight-value">33 2710 3296</div></div>
         <div class="highlight-item"><div class="highlight-icon">⏰</div><div class="highlight-title">Horario</div><div class="highlight-value">Lun-Sáb 9-6</div></div>
       </div>
     </div>
@@ -397,8 +397,8 @@
     <span class="section-num" style="text-align:center;">04 — CONTACTO</span>
     <h2 class="contact-name">¿Listo para tu <span>proyecto</span>?</h2>
     <p class="contact-subtitle">Cotizamos sin compromiso</p>
-    <a href="tel:+5227103296" class="contact-phone-btn">📞 +52 2710 3296</a>
-    <a href="https://wa.me/5227103296?text=Hola%20El%20Cubano,%20me%20interesa%20una%20cotización" class="contact-whatsapp" target="_blank">💬 Enviar WhatsApp</a>
+    <a href="https://wa.me/523327103296" class="contact-wa-btn" target="_blank">💬 ENVIAR WHATSAPP</a>
+    <a href="tel:+523327103296" class="contact-phone">📞 +52 33 2710 3296</a>
     <div class="contact-location">
       <strong>📍 Taller El Cubano</strong>
       Valle de Juárez, Jalisco, México<br>
@@ -414,7 +414,7 @@
   <div class="footer-copy">© 2024 El Cubano · José Godinez. Hecho con <span>❤</span> en Jalisco.</div>
 </footer>
 
-<a href="https://wa.me/5227103296?text=Hola%20El%20Cubano,%20me%20interesa%20una%20cotización" class="float-wa" target="_blank" aria-label="WhatsApp">💬</a>
+<a href="https://wa.me/523327103296" class="float-wa" target="_blank" aria-label="WhatsApp">💬</a>
 
 <script>
 window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1200); });
@@ -424,9 +424,9 @@ window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', wind
 function handleResize() {
   const navDesktop = document.getElementById('navDesktop');
   const menuBtn = document.getElementById('menuBtn');
-  const navCall = document.querySelector('.nav-call');
-  if (window.innerWidth >= 1024) { navDesktop.style.display = 'flex'; menuBtn.style.display = 'none'; navCall.style.display = 'none'; }
-  else { navDesktop.style.display = 'none'; menuBtn.style.display = 'flex'; navCall.style.display = 'flex'; }
+  const navWa = document.querySelector('.nav-wa');
+  if (window.innerWidth >= 1024) { navDesktop.style.display = 'flex'; menuBtn.style.display = 'none'; navWa.style.display = 'none'; }
+  else { navDesktop.style.display = 'none'; menuBtn.style.display = 'flex'; navWa.style.display = 'flex'; }
 }
 handleResize();
 window.addEventListener('resize', handleResize);
